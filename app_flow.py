@@ -1,4 +1,3 @@
-pip install langchain
 import getpass
 import os
 from langchain import hub
