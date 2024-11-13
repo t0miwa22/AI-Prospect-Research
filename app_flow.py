@@ -19,7 +19,7 @@ from langchain_openai import ChatOpenAI
 
 from langchain_openai import ChatOpenAI
 
-model = ChatOpenAI(model="gpt-4")
+model = ChatOpenAI(model="gpt-4o-mini")
 
 
 #function to scrape the company website
@@ -46,7 +46,7 @@ prompt_template = PromptTemplate(
 )
 
 # Initialize OpenAI LLM
-llm = ChatOpenAI(model="gpt-4", temperature=0)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 # Create an LLM chain for summarization
 summarization_chain = LLMChain(llm=llm, prompt=prompt_template)
