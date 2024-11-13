@@ -15,7 +15,7 @@ from langchain_openai import ChatOpenAI
 
 
 
-#os.environ["OPENAI_API_KEY"] = getpass.getpass()
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 from langchain_openai import ChatOpenAI
 
