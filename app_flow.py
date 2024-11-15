@@ -28,8 +28,11 @@ def scrape_website(url):
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
     paragraphs = soup.find_all('p')
-    content = ' '.join([para.get_text() for para in paragraphs])
-    return content
+    content = ' '.join(
+            [tag.get_text(strip=True) for tag in soup.find_all(['p', 'div', 'span']) if tag.get_text(strip=True)]
+        )
+    return content if content else "No readable content found on the webpage."
+
 
 
 # Define the prompt template for summarization
